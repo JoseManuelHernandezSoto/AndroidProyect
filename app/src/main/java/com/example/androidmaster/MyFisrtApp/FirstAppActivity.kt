@@ -27,6 +27,9 @@ class FirstAppActivity : AppCompatActivity() {
                     //Manda a la siguiene ventana
                     val intent = Intent(this, MenuActivity::class.java)
                     startActivity(intent)
+                } else if (userName.equals("usuario") && userPass.equals("123")) {
+                    val intent = Intent(this, MainUserActivity::class.java)
+                    startActivity(intent)
                 } else {
                     //Datos de acceso incorrectos
                     Toast.makeText(this, "Datos de acceso incorrectos", Toast.LENGTH_SHORT).show()

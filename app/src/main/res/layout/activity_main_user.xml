@@ -31,7 +31,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:text="Pendientes de hoy del administrador"
+                android:text="Pendientes de hoy del usuario"
                 android:textColor="@color/black"
                 android:textSize="25sp"
                 android:textStyle="bold" />
@@ -43,7 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="15dp"
-            android:text="Sacar al perro"
+            android:text="Terminar la app"
             android:textColor="@color/black"
             android:textSize="20sp" />
 
