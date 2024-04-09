@@ -10,6 +10,9 @@ import androidx.appcompat.widget.AppCompatEditText
 import com.example.androidmaster.R
 
 class AddWeekActivity : AppCompatActivity() {
+    companion object {
+        val itemsWeek: MutableList<String> = mutableListOf()
+    }
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,6 +24,7 @@ class AddWeekActivity : AppCompatActivity() {
         val etTaskDescripcion = findViewById<AppCompatEditText>(R.id.etTaskDescription)
 
         btnConfirm.setOnClickListener {
+            itemsWeek.add(etTaskName.text.toString())
             val intent = Intent(this, ConfirmWeekActivity::class.java)
             calendarWeek.setOnDateChangeListener { view, year, month, dayOfMonth ->
                 val monthCorrect = month + 1

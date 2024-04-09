@@ -37,42 +37,10 @@
                 android:textStyle="bold" />
         </LinearLayout>
 
-
-        <RadioButton
-            android:id="@+id/rbOptionToday1"
+        <ListView
+            android:id="@+id/listDay"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="15dp"
-            android:text="Sacar al perro"
-            android:textColor="@color/black"
-            android:textSize="20sp" />
-
-        <RadioButton
-            android:id="@+id/rbOptionToday2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="15dp"
-            android:text="Sacar la basura"
-            android:textColor="@color/black"
-            android:textSize="20sp" />
-
-        <RadioButton
-            android:id="@+id/rbOptionToday3"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="15dp"
-            android:text="Regar las plantas"
-            android:textColor="@color/black"
-            android:textSize="20sp" />
-
-        <RadioButton
-            android:id="@+id/rbOptionToday4"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="15dp"
-            android:text="Reunion a las 12:30 con Juan"
-            android:textColor="@color/black"
-            android:textSize="20sp" />
+            android:layout_height="match_parent"/>
 
         <ImageView
             android:id="@+id/imgAddToday"
@@ -82,6 +50,8 @@
             android:src="@drawable/plus" />
 
     </LinearLayout>
+
+
 
     <!-- Contenedor pendientes de semana-->
     <LinearLayout
@@ -115,50 +85,11 @@
         </LinearLayout>
 
 
-        <RadioButton
-            android:id="@+id/rbOptionWeek1"
+        <ListView
+            android:id="@+id/listWeek"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="15dp"
-            android:text="Comprar comida para el perro"
-            android:textColor="@color/black"
-            android:textSize="20sp" />
+            android:layout_height="match_parent"/>
 
-        <RadioButton
-            android:id="@+id/rbOptionWeek2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="15dp"
-            android:text="Pagar el internet"
-            android:textColor="@color/black"
-            android:textSize="20sp" />
-
-        <RadioButton
-            android:id="@+id/rbOptionWeek3"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="15dp"
-            android:text="Pagar el agua"
-            android:textColor="@color/black"
-            android:textSize="20sp" />
-
-        <RadioButton
-            android:id="@+id/rbOptionWeek4"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="15dp"
-            android:text="Comprar camaron"
-            android:textColor="@color/black"
-            android:textSize="20sp" />
-
-        <RadioButton
-            android:id="@+id/rbOptionWeek5"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="15dp"
-            android:text="Reunion familiar"
-            android:textColor="@color/black"
-            android:textSize="20sp" />
 
         <ImageView
             android:id="@+id/imgAddweek"
