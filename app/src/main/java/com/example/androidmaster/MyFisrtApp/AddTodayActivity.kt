@@ -8,11 +8,7 @@ import androidx.appcompat.widget.AppCompatButton
 import com.example.androidmaster.R
 
 
-
 class AddTodayActivity : AppCompatActivity() {
-    companion object {
-        val itemsDay: MutableList<String> = mutableListOf()
-    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_today)
@@ -22,15 +18,19 @@ class AddTodayActivity : AppCompatActivity() {
         val etTaskDescription = findViewById<TextView>(R.id.etTaskDescription)
 
         btnConfirm.setOnClickListener {
-            val intent = Intent(this, ConfirmWeekActivity::class.java)
-            itemsDay.add(etTaskName.text.toString())
-            val taskNane = etTaskName.text.toString()
+            val taskName = etTaskName.text.toString()
             val taskDescription = etTaskDescription.text.toString()
 
-            intent.putExtra("EXTRA_TASK_NAME", taskNane)
+            // Agregar la tarea a la lista
+            TaskList.itemsDay.add(taskName)
+
+            // Crear el intent y comenzar la ConfirmWeekActivity
+            val intent = Intent(this, ConfirmWeekActivity::class.java)
+            intent.putExtra("EXTRA_TASK_NAME", taskName)
             intent.putExtra("EXTRA_TASK_DESCRIPTION", taskDescription)
             startActivity(intent)
         }
+
 
     }
 }
