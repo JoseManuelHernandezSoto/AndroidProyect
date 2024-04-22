@@ -13,6 +13,9 @@
         android:theme="@style/Theme.AndroidMaster"
         tools:targetApi="31">
         <activity
+            android:name=".MyFisrtApp.TaskActivity"
+            android:exported="false" />
+        <activity
             android:name=".MyFisrtApp.MainUserActivity"
             android:exported="false" />
         <activity
