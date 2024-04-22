@@ -24,7 +24,7 @@ class AddWeekActivity : AppCompatActivity() {
         val etTaskDescripcion = findViewById<AppCompatEditText>(R.id.etTaskDescription)
 
         btnConfirm.setOnClickListener {
-            itemsWeek.add(etTaskName.text.toString())
+            TaskList.itemsWeek.add(etTaskName.text.toString())
             val intent = Intent(this, ConfirmWeekActivity::class.java)
             calendarWeek.setOnDateChangeListener { view, year, month, dayOfMonth ->
                 val monthCorrect = month + 1
