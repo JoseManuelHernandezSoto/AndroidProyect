@@ -38,8 +38,6 @@ class MenuActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-
-
         imgAddToday.setOnClickListener {
             val intent = Intent(this, AddTodayActivity::class.java)
             startActivity(intent)

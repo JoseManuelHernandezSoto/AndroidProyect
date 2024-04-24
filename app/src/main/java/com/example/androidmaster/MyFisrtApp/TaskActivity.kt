@@ -30,7 +30,10 @@ class TaskActivity : AppCompatActivity() {
             startActivity(intent)
         }
         btnActividad.setOnClickListener {
-            //Agregar la logica
+            val task2 = tvTask.text.toString()
+            val intent = Intent(this, UpdateActivity::class.java)
+            intent.putExtra("EXTRA_TASK_NAME", task2)
+            startActivity(intent)
         }
     }
 }
