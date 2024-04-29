@@ -23,6 +23,7 @@ class AddTodayActivity : AppCompatActivity() {
 
             // Agregar la tarea a la lista
             TaskList.itemsDay.add(taskName)
+            TaskList.descriptionDay.add(taskDescription)
 
             // Crear el intent y comenzar la ConfirmWeekActivity
             val intent = Intent(this, ConfirmWeekActivity::class.java)
