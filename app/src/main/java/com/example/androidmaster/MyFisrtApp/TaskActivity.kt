@@ -11,18 +11,22 @@ import com.example.androidmaster.R
 class TaskActivity : AppCompatActivity() {
     companion object {
         var itemsDay: MutableList<String> = mutableListOf()
+        var itemsWeek: MutableList<String> = mutableListOf()
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_task)
 
         val tvTask = findViewById<AppCompatTextView>(R.id.activity)
+        val tvdescr = findViewById<AppCompatTextView>(R.id.descrip)
         val btnEliminar = findViewById<AppCompatButton>(R.id.btnEliminar)
         val btnActividad = findViewById<AppCompatButton>(R.id.btnActualizar)
 
         val task: String = intent.extras?.getString("EXTRA_TASK_NAME").orEmpty()
+        val desc: String = intent.extras?.getString("EXTRA_TASK_DESCRIPTION").orEmpty()
 
         tvTask.text = task
+        tvdescr.text = desc
 
         btnEliminar.setOnClickListener {
             TaskList.itemsDay.removeIf { it == tvTask.text.toString() }
