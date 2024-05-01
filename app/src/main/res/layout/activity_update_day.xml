@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MyFisrtApp.UpdateActivity">
+    tools:context=".MyFisrtApp.UpdateActivityDay">
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/etTaskName"
@@ -20,17 +20,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/spCategoria"
+        android:layout_width="203dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/spCategoria"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etTaskName"/>
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnActualizar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30px"
+        android:layout_marginTop="80dp"
         android:text="Actualizar"
         android:textColor="@color/black"
         android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etTaskName" />
+        app:layout_constraintTop_toBottomOf="@+id/spCategoria" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

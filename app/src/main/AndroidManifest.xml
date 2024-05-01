@@ -13,7 +13,13 @@
         android:theme="@style/Theme.AndroidMaster"
         tools:targetApi="31">
         <activity
-            android:name=".MyFisrtApp.UpdateActivity"
+            android:name=".MyFisrtApp.TaskActivityWeek"
+            android:exported="false" />
+        <activity
+            android:name=".MyFisrtApp.UpdateActivityWeek"
+            android:exported="false" />
+        <activity
+            android:name=".MyFisrtApp.UpdateActivityDay"
             android:exported="false" />
         <activity
             android:name=".MyFisrtApp.TaskActivity"

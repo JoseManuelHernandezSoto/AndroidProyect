@@ -7,35 +7,31 @@ import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatTextView
 import com.example.androidmaster.R
 
-class TaskActivity : AppCompatActivity() {
-    companion object {
-        var itemsDay: MutableList<String> = mutableListOf()
-        var itemsWeek: MutableList<String> = mutableListOf()
-    }
+class TaskActivityWeek : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_task)
+        setContentView(R.layout.activity_task_week)
 
         val tvTask = findViewById<AppCompatTextView>(R.id.activity)
         val tvdescr = findViewById<AppCompatTextView>(R.id.descrip)
         val btnEliminar = findViewById<AppCompatButton>(R.id.btnEliminar)
         val btnActividad = findViewById<AppCompatButton>(R.id.btnActualizar)
 
-        val task: String = intent.extras?.getString("EXTRA_TASK_NAME").orEmpty()
-        val desc: String = intent.extras?.getString("EXTRA_TASK_DESCRIPTION").orEmpty()
+        val taskName = intent.getStringExtra("EXTRA_TASK_NAME").orEmpty()
+        val taskDescription = intent.getStringExtra("EXTRA_TASK_DESCRIPTION").orEmpty()
 
-        tvTask.text = task
-        tvdescr.text = desc
+        tvTask.text = taskName
+        tvdescr.text = taskDescription
 
         btnEliminar.setOnClickListener {
-            TaskList.itemsDay.removeIf { it == tvTask.text.toString() }
+            TaskList.itemsWeek.removeIf { it == tvTask.text.toString() }
             val intent = Intent(this, MenuActivity::class.java)
             startActivity(intent)
         }
+
         btnActividad.setOnClickListener {
-            val task2 = tvTask.text.toString()
-            val intent = Intent(this, UpdateActivityDay::class.java)
-            intent.putExtra("EXTRA_TASK_NAME", task2)
+            val intent = Intent(this, UpdateActivityWeek::class.java)
+            intent.putExtra("EXTRA_TASK_NAME", taskName)
             startActivity(intent)
         }
     }

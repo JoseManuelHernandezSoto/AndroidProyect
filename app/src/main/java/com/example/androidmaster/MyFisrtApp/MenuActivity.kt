@@ -6,6 +6,7 @@ import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.ListView
+import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
 import com.example.androidmaster.R
 
@@ -53,18 +54,18 @@ class MenuActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-  /*      listWeek.setOnItemClickListener { parent, view, position, id ->
+        listWeek.setOnItemClickListener { parent, view, position, id ->
             // Acción a realizar cuando se hace clic en un elemento del ListView
             val selectedName = TaskList.itemsWeek[position] // Obtener el nombre de la tarea seleccionada
             val selectedDescription = TaskList.descriptionweek[position] // Obtener la descripción de la tarea seleccionada
 
             Log.d("MiTag", "Elemento seleccionado - Nombre: $selectedName, Descripción: $selectedDescription")
 
-            val intent = Intent(this, TaskActivity::class.java)
+            val intent = Intent(this, TaskActivityWeek::class.java)
             intent.putExtra("EXTRA_TASK_NAME", selectedName)
             intent.putExtra("EXTRA_TASK_DESCRIPTION", selectedDescription)
             startActivity(intent)
-        }*/
+        }
 
         imgAddToday.setOnClickListener {
             val intent = Intent(this, AddTodayActivity::class.java)
@@ -75,7 +76,5 @@ class MenuActivity : AppCompatActivity() {
             val intent = Intent(this, AddWeekActivity::class.java)
             startActivity(intent)
         }
-
-
     }
 }

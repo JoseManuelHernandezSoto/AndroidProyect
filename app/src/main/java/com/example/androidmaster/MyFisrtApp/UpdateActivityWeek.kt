@@ -1,29 +1,23 @@
 package com.example.androidmaster.MyFisrtApp
 
-import android.annotation.SuppressLint
-import android.app.ActivityManager.TaskDescription
 import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.CalendarView
 import android.widget.Spinner
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatEditText
 import com.example.androidmaster.R
-import java.io.Console
 
-class AddWeekActivity : AppCompatActivity() {
-
+class UpdateActivityWeek : AppCompatActivity() {
     private var selectedDate: String = "" // Variable para almacenar la fecha seleccionada
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_add_week)
+        setContentView(R.layout.activity_update_week)
 
-        val btnConfirm = findViewById<AppCompatButton>(R.id.btnConfirm)
+        val btnUpdate = findViewById<AppCompatButton>(R.id.btnConfirm)
         val calendarWeek = findViewById<CalendarView>(R.id.calendarToday)
         val etTaskName = findViewById<AppCompatEditText>(R.id.etTaskName)
         val etTaskDescripcion = findViewById<AppCompatEditText>(R.id.etTaskDescription)
@@ -48,22 +42,25 @@ class AddWeekActivity : AppCompatActivity() {
             // Aquí puedes realizar cualquier otra acción con la fecha seleccionada
         }
 
-        // Acción al hacer clic en el botón de confirmación
-        btnConfirm.setOnClickListener {
-            val intent = Intent(this, MenuActivity::class.java)
-            val taskDescription = etTaskDescripcion.text.toString()
-            val taskName = etTaskName.text.toString()
+        // Valor enviado con el intent
+        val task: String = intent.extras?.getString("EXTRA_TASK_NAME").orEmpty()
+        val parts = task.split("-")
+        // Obtener el índice del elemento en la lista
+        val index = TaskList.itemsWeek.indexOf(task)
+
+        // Establecer el texto del EditText con el valor del elemento
+        etTaskName.setText(parts[0])
+
+        btnUpdate.setOnClickListener {
+            val newTask = etTaskName.text.toString()
             val selectedCategory = spCategoria.selectedItem.toString()
+           // val newDescription = etTaskDescripcion.text.toString()
+            // Realizar el reemplazo en la lista
+            TaskList.itemsWeek[index] = "$newTask - $selectedCategory - $selectedDate"
 
-            // Agregar la tarea a la lista
-            TaskList.itemsWeek.add("$taskName - $selectedCategory - $selectedDate")
-            TaskList.descriptionweek.add(taskDescription)
-
-            Toast.makeText(this, "Tarea creada con exito", Toast.LENGTH_SHORT).show()
-
-            // Iniciar la actividad de confirmación
+            // Opcional: Notificar a la actividad anterior sobre el cambio
+            val intent = Intent(this, MenuActivity::class.java)
             startActivity(intent)
         }
     }
 }
-

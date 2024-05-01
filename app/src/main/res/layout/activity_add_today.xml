@@ -34,18 +34,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etTaskName" />
 
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnConfirm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="128dp"
         android:text="Confirmar"
         android:textColor="@color/black"
         android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/etTaskDescription" />
 
-
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/spCategoria"
+        android:layout_width="203dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/btnConfirm"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etTaskDescription" />
 </androidx.constraintlayout.widget.ConstraintLayout>
