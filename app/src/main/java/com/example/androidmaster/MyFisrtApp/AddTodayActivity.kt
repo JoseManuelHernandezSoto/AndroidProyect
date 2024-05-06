@@ -3,11 +3,10 @@ package com.example.androidmaster.MyFisrtApp
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
+import android.widget.Button
 import android.widget.Spinner
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.AppCompatButton
 import com.example.androidmaster.R
 import com.google.android.material.textfield.TextInputEditText
 
@@ -30,7 +29,7 @@ class AddTodayActivity : AppCompatActivity() {
         // Asigna el adaptador al Spinner
         spCategoria.adapter = adapter
 
-        val btnConfirm = findViewById<AppCompatButton>(R.id.btnConfirm)
+        val btnConfirm = findViewById<Button>(R.id.btnConfirm)
         //val etTaskName = findViewById<TextView>(R.id.etTaskName)
         val etTaskName = findViewById<TextInputEditText>(R.id.etTaskName)
         val etTaskDescription = findViewById<TextInputEditText>(R.id.etTaskDescription)

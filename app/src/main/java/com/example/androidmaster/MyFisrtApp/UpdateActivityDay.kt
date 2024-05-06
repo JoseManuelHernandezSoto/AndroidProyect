@@ -4,7 +4,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.ArrayAdapter
+import android.widget.Button
 import android.widget.Spinner
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatEditText
@@ -17,6 +19,7 @@ class UpdateActivityDay : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_update_day)
 
+        val btnRegresar = findViewById<Button>(R.id.btnRegresar)
         val spCategoria: Spinner = findViewById(R.id.spCategoria)
         // Define las opciones a mostrar en el Spinner
         val opciones = arrayOf("Urgente", "No urgente", "Otro")
@@ -32,7 +35,7 @@ class UpdateActivityDay : AppCompatActivity() {
 
         // Valor enviado con el intent
         val task: String = intent.extras?.getString("EXTRA_TASK_NAME").orEmpty()
-      //  val taskD: String = intent.extras?.getString("EXTRA_TASK_DESCRIPTION").orEmpty()
+        val taskD: String = intent.extras?.getString("EXTRA_TASK_DESCRIPTION").orEmpty()
 
 
         val parts = task.split("-")
@@ -40,11 +43,11 @@ class UpdateActivityDay : AppCompatActivity() {
 
         // Obtener el índice del elemento en la lista
         val index = TaskList.itemsDay.indexOf(task)
-      //  val indexD = TaskList.descriptionDay.indexOf(taskD)
+        val indexD = TaskList.descriptionDay.indexOf(taskD)
 
         // Obtener referencia al EditText y al botón de actualizar
         val etTask = findViewById<TextInputEditText>(R.id.etTaskName)
-        //val etTaskDescription = findViewById<TextInputEditText>(R.id.etTaskDescription)
+        val etTaskDescription = findViewById<TextInputEditText>(R.id.etTaskDescription)
         val btnActualizar = findViewById<AppCompatButton>(R.id.btnActualizar)
 
         // Establecer el texto del EditText con el valor del elemento
@@ -57,7 +60,7 @@ class UpdateActivityDay : AppCompatActivity() {
         btnActualizar.setOnClickListener {
             // Obtener la nueva tarea del EditText
             val newTask = etTask.text.toString()
-           // val newDesc = etTaskDescription.text.toString()
+            val newDesc = etTaskDescription.text.toString()
             // Obtener el valor seleccionado del Spinner
             val selectedCategory = spCategoria.selectedItem.toString()
 
@@ -67,10 +70,16 @@ class UpdateActivityDay : AppCompatActivity() {
 
             // Realizar el reemplazo en la lista
             TaskList.itemsDay[index] = "$newTask - $selectedCategory"
-            //TaskList.descriptionDay[indexD] = "$newDesc "
+            TaskList.descriptionDay[indexD] = "$newDesc "
 
             // Opcional: Notificar a la actividad anterior sobre el cambio
             val intent = Intent(this, MenuActivity::class.java)
+            startActivity(intent)
+        }
+
+        btnRegresar.setOnClickListener {
+            val intent = Intent(this, MenuActivity::class.java)
+            Toast.makeText(this, "Tarea creada con exito", Toast.LENGTH_SHORT).show()
             startActivity(intent)
         }
     }

@@ -1,19 +1,16 @@
 package com.example.androidmaster.MyFisrtApp
 
-import android.annotation.SuppressLint
-import android.app.ActivityManager.TaskDescription
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.ArrayAdapter
+import android.widget.Button
 import android.widget.CalendarView
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatEditText
 import com.example.androidmaster.R
-import java.io.Console
+
 
 class AddWeekActivity : AppCompatActivity() {
 
@@ -23,7 +20,7 @@ class AddWeekActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_week)
 
-        val btnConfirm = findViewById<AppCompatButton>(R.id.btnConfirm)
+        val btnConfirm = findViewById<Button>(R.id.btnConfirm)
         val calendarWeek = findViewById<CalendarView>(R.id.calendarToday)
         val etTaskName = findViewById<AppCompatEditText>(R.id.etTaskName)
         val etTaskDescripcion = findViewById<AppCompatEditText>(R.id.etTaskDescription)

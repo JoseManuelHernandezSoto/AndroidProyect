@@ -20,7 +20,7 @@ class UpdateActivityWeek : AppCompatActivity() {
         val btnUpdate = findViewById<AppCompatButton>(R.id.btnConfirm)
         val calendarWeek = findViewById<CalendarView>(R.id.calendarToday)
         val etTaskName = findViewById<AppCompatEditText>(R.id.etTaskName)
-        val etTaskDescripcion = findViewById<AppCompatEditText>(R.id.etTaskDescription)
+        val etTaskDescription = findViewById<AppCompatEditText>(R.id.etTaskDescription)
         val spCategoria: Spinner = findViewById(R.id.spCategoria)
 
         // Define las opciones a mostrar en el Spinner
@@ -44,19 +44,24 @@ class UpdateActivityWeek : AppCompatActivity() {
 
         // Valor enviado con el intent
         val task: String = intent.extras?.getString("EXTRA_TASK_NAME").orEmpty()
+        val taskD: String = intent.extras?.getString("EXTRA_TASK_DESCRIPTION").orEmpty()
+
         val parts = task.split("-")
         // Obtener el índice del elemento en la lista
         val index = TaskList.itemsWeek.indexOf(task)
+        val indexD = TaskList.descriptionweek.indexOf(taskD)
 
         // Establecer el texto del EditText con el valor del elemento
         etTaskName.setText(parts[0])
 
         btnUpdate.setOnClickListener {
             val newTask = etTaskName.text.toString()
+            val newDesc = etTaskDescription.text.toString()
             val selectedCategory = spCategoria.selectedItem.toString()
-           // val newDescription = etTaskDescripcion.text.toString()
+
             // Realizar el reemplazo en la lista
             TaskList.itemsWeek[index] = "$newTask - $selectedCategory - $selectedDate"
+            TaskList.descriptionweek[indexD] = "$newDesc "
 
             // Opcional: Notificar a la actividad anterior sobre el cambio
             val intent = Intent(this, MenuActivity::class.java)

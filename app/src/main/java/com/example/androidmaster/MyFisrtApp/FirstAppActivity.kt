@@ -5,11 +5,9 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.AppCompatButton
-import androidx.appcompat.widget.AppCompatEditText
 import com.example.androidmaster.R
 import com.google.android.material.textfield.TextInputEditText
-import com.google.android.material.textfield.TextInputLayout
+
 
 class FirstAppActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
