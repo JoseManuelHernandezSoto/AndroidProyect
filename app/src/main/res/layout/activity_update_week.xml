@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/login"
     tools:context=".MyFisrtApp.UpdateActivityWeek">
 
     <androidx.appcompat.widget.AppCompatEditText
@@ -42,6 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:firstDayOfWeek="2"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etTaskDescription" />

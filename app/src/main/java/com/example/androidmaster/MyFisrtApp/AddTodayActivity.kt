@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import com.example.androidmaster.R
+import com.google.android.material.textfield.TextInputEditText
 
 
 class AddTodayActivity : AppCompatActivity() {
@@ -30,8 +31,10 @@ class AddTodayActivity : AppCompatActivity() {
         spCategoria.adapter = adapter
 
         val btnConfirm = findViewById<AppCompatButton>(R.id.btnConfirm)
-        val etTaskName = findViewById<TextView>(R.id.etTaskName)
-        val etTaskDescription = findViewById<TextView>(R.id.etTaskDescription)
+        //val etTaskName = findViewById<TextView>(R.id.etTaskName)
+        val etTaskName = findViewById<TextInputEditText>(R.id.etTaskName)
+        val etTaskDescription = findViewById<TextInputEditText>(R.id.etTaskDescription)
+        //val etTaskDescription = findViewById<TextView>(R.id.etTaskDescription)
 
         btnConfirm.setOnClickListener {
             val taskName = etTaskName.text.toString()

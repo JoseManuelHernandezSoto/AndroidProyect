@@ -2,19 +2,25 @@ package com.example.androidmaster.MyFisrtApp
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatEditText
 import com.example.androidmaster.R
+import com.google.android.material.textfield.TextInputEditText
+import com.google.android.material.textfield.TextInputLayout
 
 class FirstAppActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_first_app)
-        val etUser = findViewById<AppCompatEditText>(R.id.etUser)
-        val etPass = findViewById<AppCompatEditText>(R.id.etPassword)
-        val btnLogin = findViewById<AppCompatButton>(R.id.btnLogin)
+        //val etUser = findViewById<AppCompatEditText>(R.id.etUser)
+        //val etPass = findViewById<AppCompatEditText>(R.id.etPassword)
+        // val btnLogin = findViewById<AppCompatButton>(R.id.btnLogin)
+        val etUser = findViewById<TextInputEditText>(R.id.etUser)
+        val etPass = findViewById<TextInputEditText>(R.id.etPassword)
+        val btnLogin = findViewById<Button>(R.id.btnLogin)
 
 
         btnLogin.setOnClickListener {

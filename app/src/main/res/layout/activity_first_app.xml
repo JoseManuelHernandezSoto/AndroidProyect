@@ -4,34 +4,51 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_background"
+    android:theme="@style/ThemeOverlay.MaterialComponents"
+    android:background="@drawable/login"
     tools:context=".MyFisrtApp.FirstAppActivity">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:text="Ingresa tus datos"
-        android:textColor="@color/black"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/etUser"
+        android:id="@+id/logo"
+        android:layout_width="389dp"
+        android:layout_height="260dp"
+        android:layout_marginBottom="56dp"
+        android:background="@drawable/logoapp"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/inicio"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnLogin"
+    <TextView
+        android:id="@+id/inicio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:maxLength="15"
-        android:text="Log in"
+        android:layout_marginBottom="56dp"
+        android:text="Inicio de sesion"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/etU"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Iniciar Sesion"
+        app:backgroundTint="@color/cardview_light_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.795" />
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/etUser"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etU"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
@@ -40,23 +57,38 @@
         android:maxLines="1"
         android:minHeight="48dp"
         android:singleLine="true"
-        app:layout_constraintBottom_toTopOf="@+id/etPassword"
+        app:layout_constraintBottom_toTopOf="@+id/etP"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:boxBackgroundMode="outline"
+        app:endIconMode="clear_text">
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/etPassword"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etP"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
-        android:hint="Contraseña"
-        android:inputType="textPassword"
-        android:maxLines="1"
         android:minHeight="48dp"
-        android:singleLine="true"
         app:layout_constraintBottom_toTopOf="@+id/btnLogin"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:endIconMode="password_toggle"
+        android:hint="contraseña"
+        app:boxBackgroundMode="outline">
 
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

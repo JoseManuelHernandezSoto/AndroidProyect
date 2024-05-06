@@ -4,40 +4,71 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/login"
     tools:context=".MyFisrtApp.UpdateActivityDay">
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/etTaskName"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etT"
         android:layout_width="400dp"
-        android:layout_height="48dp"
+        android:layout_height="60dp"
         android:layout_marginTop="80dp"
         android:hint="Nombre de la tarea"
-        android:maxLength="40"
+        android:maxLength="100"
+        android:maxLines="1"
+        android:minHeight="60dp"
+        android:singleLine="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:boxBackgroundMode="outline"
+        app:endIconMode="clear_text">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etTaskName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etD"
+        android:layout_width="400dp"
+        android:layout_height="60dp"
+        android:hint="Descripcion de la tarea"
+        android:maxLength="100"
         android:maxLines="1"
         android:minHeight="48dp"
         android:singleLine="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/etT"
+        app:boxBackgroundMode="outline"
+        app:endIconMode="clear_text">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etTaskDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.appcompat.widget.AppCompatSpinner
         android:id="@+id/spCategoria"
         android:layout_width="203dp"
         android:layout_height="55dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="224dp"
         android:textColor="@color/black"
         android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/spCategoria"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etTaskName"/>
+        app:layout_constraintTop_toBottomOf="@id/etT" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnActualizar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="96dp"
         android:text="Actualizar"
         android:textColor="@color/black"
         android:textSize="15sp"

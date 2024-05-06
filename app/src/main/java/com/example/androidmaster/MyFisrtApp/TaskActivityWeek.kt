@@ -16,6 +16,7 @@ class TaskActivityWeek : AppCompatActivity() {
         val tvdescr = findViewById<AppCompatTextView>(R.id.descrip)
         val btnEliminar = findViewById<AppCompatButton>(R.id.btnEliminar)
         val btnActividad = findViewById<AppCompatButton>(R.id.btnActualizar)
+        val btnregresar = findViewById<AppCompatButton>(R.id.btnBack)
 
         val taskName = intent.getStringExtra("EXTRA_TASK_NAME").orEmpty()
         val taskDescription = intent.getStringExtra("EXTRA_TASK_DESCRIPTION").orEmpty()
@@ -32,6 +33,11 @@ class TaskActivityWeek : AppCompatActivity() {
         btnActividad.setOnClickListener {
             val intent = Intent(this, UpdateActivityWeek::class.java)
             intent.putExtra("EXTRA_TASK_NAME", taskName)
+            startActivity(intent)
+        }
+
+        btnregresar.setOnClickListener{
+            val intent = Intent(this, MenuActivity::class.java)
             startActivity(intent)
         }
     }

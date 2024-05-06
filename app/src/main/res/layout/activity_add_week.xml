@@ -4,38 +4,57 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/general"
+    android:background="@drawable/login"
+    android:theme="@style/ThemeOverlay.Material3.MaterialCalendar"
     tools:context=".MyFisrtApp.AddWeekActivity">
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/etTaskName"
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etT"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:hint="Nombre de la tarea"
-        android:maxHeight="48dp"
+        android:maxHeight="60dp"
         android:maxLength="40"
         android:maxLines="1"
-        android:minHeight="48dp"
+        android:minHeight="60dp"
         android:singleLine="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:boxBackgroundMode="outline"
+        app:endIconMode="clear_text">
 
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etTaskName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/etTaskDescription"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etD"
+        android:layout_width="400dp"
+        android:layout_height="60dp"
         android:hint="Descripcion de la tarea"
-        android:maxHeight="40dp"
-        android:maxLength="100"
+        android:maxHeight="60dp"
+        android:maxLength="40"
         android:maxLines="1"
-        android:minHeight="48dp"
+        android:minHeight="60dp"
         android:singleLine="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etTaskName" />
+        app:layout_constraintTop_toBottomOf="@+id/etT"
+        app:boxBackgroundMode="outline"
+        app:endIconMode="clear_text">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etTaskDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <CalendarView
         android:id="@+id/calendarToday"
@@ -45,13 +64,15 @@
         android:firstDayOfWeek="2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etTaskDescription" />
+        app:layout_constraintTop_toBottomOf="@+id/etD" />
 
-    <androidx.appcompat.widget.AppCompatButton
+    <Button
         android:id="@+id/btnConfirm"
+        style="?attr/materialButtonOutlinedStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Confirmar"
+        app:backgroundTint="@color/cardview_light_background"
         android:textColor="@color/black"
         android:textSize="15sp"
         android:textStyle="bold"
